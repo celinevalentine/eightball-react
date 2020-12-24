@@ -1,10 +1,12 @@
 import React from 'react';
 import EightBall from './EightBall';
+import ColorBoxes from './ColorBoxes';
 
 function App(){
 	return (
 		<div className="App">
-			<EightBall />
+			{/* <EightBall /> */}
+			<ColorBoxes />
 		</div>
 	);
 }

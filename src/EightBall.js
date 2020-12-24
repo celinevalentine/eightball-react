@@ -28,10 +28,11 @@ const answers = [
 const randAnswer = (answers) => {
 	//get a random idx from array
 	let choice = Math.floor(Math.random() * answers.length);
-	console.log(answers);
-	console.log(choice);
+	console.log(answers[choice]);
+
 	return answers[choice];
 };
+/* todo: display counts of the number of times the eight ball shows up as each of the three different colors. */
 
 const EightBall = ({ msg, color }) => {
 	const initState = {
@@ -45,10 +46,11 @@ const EightBall = ({ msg, color }) => {
 
 	return (
 		<div>
-			<p className="eightball" style={{ backgroundColor: { color } }}>
-				{msg}
+			<p className="eightball" style={{ backgroundColor: answer.color }}>
+				{answer.msg}
 			</p>
-			<button onClick={() => setAnswer(randAnswer)}>Click</button>
+			<button onClick={() => setAnswer(randAnswer(answers))}>Click</button>
+			<button onClick={() => setAnswer(initState)}>Reset</button>
 		</div>
 	);
 };
